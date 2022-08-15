@@ -17,6 +17,8 @@ class Seed{
       }
       else if (crazymode==2)
       {
+        this.startcolor = color('#c7b3bb')
+        this.endcolor = color('#c29190')
 
       }
       this.deathcolor = this.endcolor
@@ -36,6 +38,9 @@ class Seed{
       }
       else if (crazymode==2)
       {
+
+        this.startcolor = color('#ccb9b7')
+        this.endcolor = color('#b39499')
         
       }
       this.deathcolor = this.endcolor 
@@ -47,6 +52,14 @@ class Seed{
     else if (this.seedtype=='flower3'){
       this.startcolor = color('#80b0af')
       this.endcolor = color('#256a77')
+      if (crazymode==2)
+      {
+
+        this.startcolor = color('#ebbd9c')
+        this.endcolor = color('#efc0b6')
+        
+      }
+
       this.deathcolor = this.endcolor 
       this.fdiv = 1.5
       this.sddiv = .7;
@@ -133,9 +146,13 @@ class SeedThrower{
     let trailcolor = color('#b8b6b9')
 
     trailcolor.setAlpha(50)
-    if (crazymode)
+    if (crazymode==1)
     {
       trailcolor = color('#efa9a6')
+    }
+    else if (crazymode==2)
+    {
+      trailcolor = color('#e5d7ba')
     }
     fill(trailcolor)
     noStroke();
@@ -204,20 +221,20 @@ let frames = 0;
 let crazymode=0;
 function setup() {
 
-  createCanvas(600, 800);
+  createCanvas(400, 900);
   angleMode(DEGREES);
   pixelDensity(1);
   let bgcolor = color('#f4efe2');
   let rando = random();
-  if (rando > .9)
+  if (rando > .67)
   {
     crazymode=1
     bgcolor = color('#dc615d');
   }
-  else if (rando>.1)
+  else if (rando>.33)
   {
     crazymode = 2
-    bgcolor = color('#efefef');
+    bgcolor = color('#f1e9d9');
   }
   background(bgcolor);
   
